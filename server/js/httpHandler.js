@@ -20,9 +20,21 @@ module.exports.router = (req, res, next = ()=>{}) => {
     res.writeHead(200, headers);
     res.write(move);
     res.end();
-  } else {
-  res.writeHead(200, headers);
-  res.end();
-  next(); // invoke next() at the end of a request to help with testing!
+  } else if (req.method === 'POST') {
+    let body = [];
+    req.on('data', (chunk) => {
+      body.push(chunk);
+    }).on('end', () => {
+      body = Buffer.concat(body).toString()
+        res.writeHead(200, headers);
+        res.end(body);
+      })
+    } else {
+        res.writeHead(200, headers);
+        res.end();
+        next();
   }
 };
+
+
+

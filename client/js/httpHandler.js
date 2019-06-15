@@ -4,23 +4,20 @@
 
   //
   // TODO: build the swim command fetcher here
-  // var ajaxGet = () => {
-  //   $.ajax({
-  //     type: 'GET',
-  //     // data: formData,
-  //     url: serverUrl,
-  //     // cache: false,
-  //     // contentType: false,
-  //     // processData: false,
-  //     success: (data) => {
-  //       // reload the page
-  //       console.log('ajaxGet ran')
-  //       SwimTeam.move(data.body);
-  //       window.location = window.location.href;
-  //     }
-  //   });
-  // }
-  //
+  var ajaxGet = () => {
+    $.ajax({
+      type: 'GET',
+      // data: formData,
+      url: serverUrl,
+      success: (data) => {
+
+        console.log('ajaxGet ran')
+        SwimTeam.move(data.body);
+        window.location = window.location.href;
+      }
+    });
+  }
+
 
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
@@ -66,20 +63,3 @@
 
 
 })();
-
-// var ajaxGet = () => {
-  // $.ajax({
-  //   type: 'GET',
-  //   // data: formData,
-  //   url: serverUrl,
-  //   // cache: false,
-  //   // contentType: false,
-  //   // processData: false,
-  //   success: (data) => {
-  //     // reload the page
-  //     console.log('ajaxGet ran')
-  //     SwimTeam.move(data.body);
-  //     window.location = window.location.href;
-  //   }
-  // });
-// }
