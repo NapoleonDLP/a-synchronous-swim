@@ -4,6 +4,22 @@
 
   //
   // TODO: build the swim command fetcher here
+  // var ajaxGet = () => {
+  //   $.ajax({
+  //     type: 'GET',
+  //     // data: formData,
+  //     url: serverUrl,
+  //     // cache: false,
+  //     // contentType: false,
+  //     // processData: false,
+  //     success: (data) => {
+  //       // reload the page
+  //       console.log('ajaxGet ran')
+  //       SwimTeam.move(data.body);
+  //       window.location = window.location.href;
+  //     }
+  //   });
+  // }
   //
 
   /////////////////////////////////////////////////////////////////////
@@ -11,13 +27,13 @@
   // Note: remember to fix the URL below.
   /////////////////////////////////////////////////////////////////////
 
-  const ajaxFileUplaod = (file) => {
+  const ajaxFileUpload = (file) => {
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
@@ -43,7 +59,27 @@
       return;
     }
 
-    ajaxFileUplaod(file);
+    // ajaxGet();
+    ajaxFileUpload(file);
   });
 
+
+
 })();
+
+// var ajaxGet = () => {
+  // $.ajax({
+  //   type: 'GET',
+  //   // data: formData,
+  //   url: serverUrl,
+  //   // cache: false,
+  //   // contentType: false,
+  //   // processData: false,
+  //   success: (data) => {
+  //     // reload the page
+  //     console.log('ajaxGet ran')
+  //     SwimTeam.move(data.body);
+  //     window.location = window.location.href;
+  //   }
+  // });
+// }
